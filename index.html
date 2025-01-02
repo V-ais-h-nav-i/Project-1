@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>6-Screen App</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div id="screen1" class="screen active">
+      <h1>Welcome to Nice</h1>
+      <p>To login, enter your phone number:</p>
+      <input type="text" id="phone" placeholder="+91" />
+      <button onclick="generateOTP()">Next</button>
+    </div>
+
+    <div id="screen2" class="screen">
+      <h1>OTP Verification</h1>
+      <p>Enter the OTP sent to your phone:</p>
+      <input type="text" id="otp" placeholder="Enter OTP" />
+      <button onclick="validateOTP()">Next</button>
+    </div>
+
+    <div id="screen3" class="screen">
+      <h1>Enter Details</h1>
+      <input type="text" id="email" placeholder="Email" />
+      <input type="text" id="name" placeholder="Name" />
+      <input type="text" id="vehicle" placeholder="Vehicle Number" />
+      <button onclick="nextScreen(4)">Next</button>
+    </div>
+
+    <div id="screen4" class="screen">
+      <h1>Toll Ticket</h1>
+      <select id="source">
+        <option value="" disabled selected>Select Source Toll</option>
+        <option value="Toll A">Toll A</option>
+        <option value="Toll B">Toll B</option>
+      </select>
+      <select id="destination">
+        <option value="" disabled selected>Select Destination Toll</option>
+        <option value="Toll C">Toll C</option>
+        <option value="Toll D">Toll D</option>
+      </select>
+      <button onclick="nextScreen(5)">Next</button>
+    </div>
+
+    <div id="screen5" class="screen">
+      <h1>UPI Payment</h1>
+      <p>Proceed with UPI payment:</p>
+      <button onclick="nextScreen(6)">Pay</button>
+    </div>
+
+    <div id="screen6" class="screen">
+      <h1>QR Code</h1>
+      <p>Scan the QR code to open the gate:</p>
+      <div class="qr-code">
+        <img src="https://via.placeholder.com/150" alt="QR Code" />
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
